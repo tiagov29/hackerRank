@@ -23,7 +23,7 @@ const mongo = config.module.mongo;
 
   const Cd = mongoose.model("cd", cdSchema);
 
-  //   create user
+  //   create cd
   const cdNew = new Cd({ name: "cdTest", price: "2000" });
   //   cdNew.save();
   const cds = await Cd.find();
