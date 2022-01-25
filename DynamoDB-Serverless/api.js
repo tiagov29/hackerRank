@@ -163,8 +163,4 @@ module.exports = {
     updatePost,
     getAllPost,
 }
-// tanto para consultar las quejas como para enviarlas actualizadas de regreso pasaran por el
-// servicio
-// Estimacion de tiempo 3 meses
-// produccion de lambda y sqs
-//1. Configuracion de los proyectos, 2. exponer el swagger de los servicios que vamos a exponer.
+
