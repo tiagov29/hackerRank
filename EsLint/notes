@@ -1,0 +1,15 @@
+en proyectos largos puede dar una referencia si el codigo es consistente y limpio
+es una manera de escribir javascript en una manera consistente
+
+dependencias : EsLint, prettier
+
+format on save : para que me organice el codigo automaticamente
+prettier : se puede configurar el tipo de comillas que se quieren entre otras
+
+npm init -y
+
+npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
+
+sudo npm i -g eslint : para instalar eslint de manera global
+
+eslint --init para generar config file de eslint : para instalar el eslint basico
