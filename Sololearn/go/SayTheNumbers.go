@@ -54,3 +54,41 @@ func main() {
     switchFunc(m)
     switchFunc(n)
 }
+
+//alternative solution
+package main
+import "fmt"
+
+func main() {
+	robotNumbers := []string{
+		"Zero", "One", "Two", "Three",
+		"Four", "Five", "Six", "Seven",
+		"Eight", "Nine", "Ten",
+	}
+
+	var x, y, z int
+	ScanTerminal(&x, &y, &z)
+
+	TextOutput(robotNumbers, x, y, z)
+}
+
+
+func ScanTerminal(x *int, y *int, z *int) {
+	fmt.Scanln(x)
+	fmt.Scanln(y)
+	fmt.Scanln(z)
+}
+
+func TextOutput(slice []string, num ...int) {
+	if num == nil || len(num) < 3 {
+		fmt.Println("Invalid value. Must have three numbers")
+	}
+
+	for _, v := range num {
+		for n := range slice {
+			if n == v {
+				fmt.Println(slice[n])
+			}
+		}
+	}
+}
