@@ -1,0 +1,30 @@
+package main : is the core of go everything begin in this function
+fmt :
+-for print something in the console => fmt.Println()
+-for reading an input => fmt.Scanln(&variable)
+
+varibale:
+ var nameOfVariable int
+ const nameOfVariable int
+
+function:
+allow to define a block of code
+
+func sum(x,y int) int {
+	return x+y
+}
+//the int outside of the brackets is for define the type of the return
+
+func welcome(){
+	fmt.println("Welcome")
+}
+func main(){
+	defer welcome()
+	fmt.Println("hey")
+}
+// with defer we guarantew the function run in the last turn
+
+func calc(x int) ( int , int) {
+	return (x*2, x*X)
+}
+//function take one input and return two integers double and his square
