@@ -28,3 +28,69 @@ func calc(x int) ( int , int) {
 	return (x*2, x*X)
 }
 //function take one input and return two integers double and his square
+
+POINTERS
+// pointers are special variables that hold the memory address of values.
+// we declare it using *
+
+var p *int //p is a ponter to an integer value.
+
+// Using & operator, returns the memory address of a variable.
+x := 42
+p := &x // p is a pointer and holds the memory address of x.
+
+// if we want to access to the underlying value of a pointer, we can use the *
+fm.Println(*p) // returns 42
+// we can change the value of the memory address the pointer holds:
+*p = 8
+fmt.println(*p) //returns 8
+
+STRUCTS
+//Structs are collections of fields that allow you to group data together.
+
+type Contact struct {
+	name string
+	age int
+}
+
+// our Contact struct has two fields, a string and an integer.
+
+x := Contact{"Santi", 30} // for creating a new contact
+
+p := &x // here we can referenciate a struct
+
+fmt.println(p.age) // returns 30
+
+p := &Contact{"john",15} // we can use a pointer when we are creating a new struct
+
+//methods are symple functions with a special receiver argument. Let's have a look at an
+//example:
+
+func (x Contact) welcome(){
+	fmt.println(x.name)
+	fmt.println(x.age)
+}
+// the receiver is the x XContact
+
+x.welcome() // for calling the method
+
+// code example
+
+func welcome( x Contact) {
+	fmt.Println(x.name)
+	fmt.Println(x.age)
+}
+func main() {
+	x := Contact{"James", 42}
+	welcome(x)
+}
+
+// for change the data of the struct in a method, we can use pointers as method recivers
+
+func (ptr *Contact) increase(val int){
+	ptr.age += val
+}
+
+x := Contact{"james", 42}
+x.increase(8)
+fmt.Println(x.age)
