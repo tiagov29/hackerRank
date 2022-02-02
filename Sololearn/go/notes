@@ -94,3 +94,63 @@ func (ptr *Contact) increase(val int){
 x := Contact{"james", 42}
 x.increase(8)
 fmt.Println(x.age)
+
+ARRAYS
+//We define an array using square brackets which define the number of elements
+// the array will hold.
+var a [5]int
+
+a := [5]int{0, 2, 4, 6, 8} //you can define and initialize values of the array
+
+
+var a [5]int
+
+a[0] = 8
+a[1] = 42
+
+fmt.Println(a[1]) // returns 42
+
+// An array has a FIXED size, meaning once defined, you cannot change the number
+//of elements it holds for that reason go provides the slice, which is a dynamically-sized
+// view into the elements of an array.
+a := [5]int{0, 2, 4, 6, 8}
+var s []int = a[1:3]
+//this code selects the elements with index 1 to 3 from the a array, including
+//the first given index, but excluding the last.
+// So, the slice s will now include the values[2,4]
+fmt.Println(s) // returns [0,6,8]
+// you can access the values of the slice the same syntax as with arrays.
+
+a := [5]int{0, 2, 4, 6, 8}
+var s []int = a[1:3]
+
+fmt.Println(s[1])
+//A slice doesn´t store any data; it just describe a section of an underlying
+// array. Changing the elements  of a slice modifies the corresponding elements
+//of its underlying array
+s[0] = 8
+fmt.Println(a)
+
+// go provides a make() function to create slices. This is how you create
+// dynamically-sized arrays.
+
+a := make([]int, 5)
+// the make function creates an array of the given type and size, and returns
+// a slice that refers to that array.
+// after creating a slice, we can add append new elements to it using the append()
+// function.
+
+a := make([]int, 5)
+a = append(a,8)
+fmt.Println(a)
+
+RANGE
+// the range form of the for loop allows you to iterate
+// over a slice:
+a := make([]int, 5)
+a[1] = 2
+a[2] = 3
+
+for i, v := range a {
+	fmt.Println(i, v)
+}
