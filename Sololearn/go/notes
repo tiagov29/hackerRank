@@ -154,3 +154,61 @@ a[2] = 3
 for i, v := range a {
 	fmt.Println(i, v)
 }
+
+MAPS
+//Maps are used to store key:value pairs.
+/*the key is always unique.
+We can create a map using the make() function, similar
+to arrays*/
+
+m := make(map[string]int)
+
+/*Now, m is a map that maps a string key to an integer
+value. Let's add some valuesto the map and output an element*/
+
+m["Santi"] = 42
+M["Amy"] = 24
+
+fmt.println(m["Santi"])
+
+// you can also initialize a map using the following syntax:
+
+m := map[string]int{
+	"santi": 42,
+	"Amy":24
+}
+
+fmt.Println(m["Amy"])
+
+// you can use the delete function to remove an element
+// the map:
+delete(m,"santi")
+
+VARIADIC functions
+
+/*are functions that can be called with any number of
+arguments.
+
+for example, the fmt.Println() function that we are using
+is a common variadic function. You can provide it any number
+of comma-separated arguments, and ir will output them
+separated by spaces*/
+fmt.Println("a", "b", "c")
+
+/* you can also define your own variadic functons!
+for example, let's make one that calculates and outputs
+the sum of its arguments: */
+
+func sum(nums ...int) {
+	total := 0
+	for _, v := range nums {
+		total += v
+	}
+	fmt.Println(total)
+}
+
+// for multiples values in a slice and would like to use
+// as arguments for a variadic function
+
+s := []int{42, 33, 22, 11}
+sum(s...)
