@@ -16,3 +16,8 @@ function solution(s) {
   });
   return numberOfletters.length;
 }
+
+//alternative solution
+function solution(s) {
+  return new Set(s).size;
+}
